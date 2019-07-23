@@ -1,0 +1,76 @@
+<div class="row margin-b-0">
+  <div class="col s12">
+    <!-- <div class="col s2">
+    </div> -->
+    <div class="col s4">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">
+        </span>
+            <div class="row">
+              <div class="col s3"></div>
+              <div class="col s6">
+                    <div *ngIf="gender == 'Male'; else imageelseBlock">
+                  <img class="circle" data-caption="placeholder image" width="150" height="150" src="assets/images/male.png">
+                    </div>
+                    <ng-template #imageelseBlock>
+                  <img class="circle" data-caption="placeholder image" width="150" height="150" src="assets/images/female.png">
+                    </ng-template>
+              </div>
+              <div class="col s3"></div>
+            </div>
+            <div class="row">
+              <div class="col s6"><b>名前</b></div>
+              <div class="col s6">{{firstname}} {{lastname}}</div>
+            </div>
+            <div class="row">
+              <div class="col s6"><b>携帯</b></div>
+              <div class="col s6">{{mobile}}</div>
+            </div>
+            <div class="row">
+              <div class="col s6"><b>Eメール</b></div>
+              <div class="col s6">{{email}}</div>
+            </div>
+            <div class="row">
+              <div class="col s6"><b>性別</b></div>
+              <div class="col s6">{{gender}}</div>
+            </div>
+            <div class="row">
+              <div class="col s6"><b>生年月日</b></div>
+              <div class="col s6">{{dob}}</div>
+            </div>
+            <div class="row">
+              <div class="col s6"><b>残高</b></div>
+              <div class="col s6">{{balanceamnt| currency: 'JPY'}}</div>
+            </div>
+            <div class="row">
+              <div class="col s6"><b>合計金額</b></div>
+              <div class="col s6">{{totalamnt | currency: 'JPY'}}</div>
+            </div>
+      </div>
+    </div>
+  </div>
+    <!-- user list of ideas -->
+      <div class="col s8">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title">ユーザーのアイデア
+              </span>
+              <div class="row">
+                    <ul class="collection" *ngFor="let i of ideaslist;let i = index">
+                    <li class="collection-item avatar">
+                      <span class="title">{{i.Title}}</span>
+                      <p>{{i.CategoryName}} {{i.ApprovedAmount| currency: 'JPY'}}<br>
+                        {{i.Created_at}}
+                      </p>
+                      <a [routerLink]="['/ideasView', i.id]" class="secondary-content"><i class="material-icons">send</i></a>
+                    </li>
+                    </ul>
+              </div>
+            </div>
+          </div>
+      </div>  
+    <!--end cards-->
+  </div>
+
+</div>

@@ -1,0 +1,93 @@
+<!-- <div class="display-table">
+  <div class="vertical-middle">
+    <div class="container">
+      <div class="row margin-b-0">
+        <div class="col s12 l4 offset-l4">
+          <div class="card margin-b-0">
+            <div class="card-content">
+              <img type="accept/png" class="img-center" src="assets/images/sense.png" height="150" width="100">
+              <div class="row">
+                <form class="col s12 margin-b-0" [formGroup]="loginForm" (ngSubmit)="login()" autocomplete="off">
+                  <div class="input-field col s12">
+                    <input id="email" type="email" formControlName="email" class="validate" placeholder="Email" required="required">
+                    <label for="email" class="">Email</label>
+                  </div>
+                  <div class="input-field col s12 margin-b-20">
+                    <input id="password" type="password" class="validate" formControlName="password" placeholder="Password" required="required">
+                    <label for="password">Password</label>
+                  </div>
+                  <div class="col s12 right-align margin-b-20">
+                    <button type="submit" class="waves-effect waves-light btn pink btn-block">sign in</button>
+                  </div>
+                  <div class="col s12 center-align">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+  <!-- <div class="limiter">
+    <div class="container-login100">
+      <div class="wrap-login100 p-t-85 p-b-20">
+        <form class="login100-form validate-form" [formGroup]="loginForm" (ngSubmit)="login()" autocomplete="off">
+          <span class="login100-form-title p-b-70">
+            Welcome
+          </span>
+          <span class="login100-form-avatar">
+            <img src="assets/images/sense.png" alt="sense idea logo">
+          </span>
+  
+          <div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate="Enter Email Id">
+            <input class="input100" type="text" name="email" formControlName="email">
+            <span class="focus-input100" data-placeholder="Email"></span>
+          </div>
+  
+          <div class="wrap-input100 validate-input m-b-50" data-validate="Enter password">
+            <input class="input100" type="password" name="pass" formControlName="password">
+            <span class="focus-input100" data-placeholder="Password"></span>
+          </div>
+  
+          <div class="container-login100-form-btn">
+            <button class="login100-form-btn">
+              sign in
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div> -->
+
+
+  <div class="materialContainer">
+            <span class="login100-form-avatar">
+              <img src="assets/images/sense.png" alt="sense idea logo">
+            </span>
+  
+    <div class="box">
+  
+      <div class="title">ログイン</div>
+    <form [formGroup]="loginForm" (ngSubmit)="login()" autocomplete="off">
+      <div class="input">
+        <label for="name">Eメール</label>
+        <input type="text" name="email" id="name" formControlName="email">
+        <span class="spin"></span>
+      </div>
+  
+      <div class="input">
+        <label for="pass">パスワード</label>
+        <input type="password" name="pass" id="pass" formControlName="password">
+        <span class="spin"></span>
+      </div>
+  
+      <div class="button login">
+        <button><span>サインイン</span></button>
+      </div>
+    </form>
+    </div>
+  
+  </div>

@@ -1,0 +1,54 @@
+<div class="row margin-b-0">
+  <div class="col s12">
+    <div class="card">
+      <div class="nav-wrapper right">
+        <div class="row">
+          <div class="input-field col s8">
+            <input id="search" type="search" [(ngModel)]="searchdata" autocomplete="off" required placeholder="検索 ">
+            <label class="label-icon" for="search"></label>
+          </div>
+          <div class="col s2 search-row">
+            <a class="btn-floating btn-medium waves-effect waves-light pink" (click)='findname(searchdata)'><i
+                class="material-icons">&#xe8b6;</i></a>
+          </div>
+        </div>
+        <a class="waves-effect waves-light btn" (click)="reset()">リセット</a>
+      </div>
+      <div class="card-content">
+        <span class="card-title center">
+          <h4><b>ユーザーリスト</b></h4>
+        </span>
+        <table class="striped">
+          <thead>
+            <tr>
+              <th data-field="id">ナンバー</th>
+              <th data-field="name">名前</th>
+              <th data-field="name">携帯</th>
+              <th data-field="gender">性別</th>
+              <th data-field="price">合計金額</th>
+              <th data-field="action">アクション</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngIf="nodata">
+              <td class="center" colspan="6">データなし</td>
+            </tr>
+        <tr *ngFor="let r of result; let i = index">
+              <td>{{((page * 10 ) + ( i + 1)) - 10}}</td>
+              <td>{{r.FirstName + r.LastName}}</td>
+              <td>{{r.Mobile}}</td>
+              <td>{{r.Gender}}</td>
+              <td>{{r.TotalAmount}}</td>
+              <td><a [routerLink]="['/usersView', r.id]" class="waves-effect waves-grey btn pink margin-b-10">詳細</a></td>
+            </tr>
+          </tbody>
+        </table>
+          <div class="col-12 justify-content-center">
+            <ngb-pagination [collectionSize]="pages" [(page)]="page" [maxSize]="5"
+              [rotate]="true" [boundaryLinks]="true" (pageChange)="getUsersSerchPage($event)"></ngb-pagination>
+          </div>
+      </div>
+    </div>
+    <!--end cards-->
+  </div>
+</div>

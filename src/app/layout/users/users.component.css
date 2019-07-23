@@ -1,0 +1,23 @@
+/* ngb-pagination li {
+    &:first-child a {
+        span {
+            display: none;
+        }
+        &:before {
+            content: "\F141";
+            font: normal normal normal 24px/1 "Material Design Icons";
+        }
+    }
+} */
+
+.justify-content-center {
+    display: flex !important;
+    justify-content: center !important;
+}
+.search-row {
+margin-left: 0;
+margin-top: 22px;
+}
+.tr_align {
+    text-align: center;
+}
